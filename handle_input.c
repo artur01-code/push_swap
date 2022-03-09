@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/09 12:52:03 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/09 15:06:59 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void handle_input(struct t_list *stack_input, int argc, char **argv)
 	while (stack_input->next != NULL)
 	{
 		stack_input = stack_input->next;
-		printf("%d\n", stack_input->content); //CHANGE
+		printf("%d\n", stack_input->content);
 	}
 }
 

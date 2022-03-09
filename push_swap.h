@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/09 13:22:44 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/09 14:57:08 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void handle_input(struct t_list *stack_input, int argc, char **argv);
 int check_dup(char **argv, int nbr);
 void fill_stack_input(struct t_list **stack_input, int value);
 void split_and_fill_stack_input(struct t_list **stack_input, char *tmp);
-void	check_values(char **argv);
+void	check_values(struct t_list *stack_input);
 
 
 #endif

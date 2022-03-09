@@ -6,29 +6,28 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:45:07 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/09 14:11:27 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/09 15:09:12 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void	check_values(char **argv)
+void	check_values(struct t_list *stack_input)
 {
-	int i;
-	int d1;
-	int d2;
-	
-	i = 1;
-	d1 = 0;
-	d2 = 0;
-	argv = malloc(sizeof(argv));
-	while (argv[i])
+	struct t_list *tmp;
+	struct t_list *beg;
+
+	tmp = stack_input->next;
+	beg = stack_input->next;
+	while (stack_input->next != NULL)
 	{
-		d1 = ft_atoi(argv[i]);
-		d2 = ft_atoi(argv[i + 1]);
-		if (d1 == d2)
-			exit(0);
-		i++;
+		while (tmp->next != NULL)
+		{
+			if(stack_input->content == tmp->content)
+				printf("EXIT");
+			tmp = tmp->next;
+		}
+		stack_input = stack_input->next;
 	}
 }
