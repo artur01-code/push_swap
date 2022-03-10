@@ -6,16 +6,18 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 13:47:37 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 14:38:01 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_print_stack(struct t_list *stack_input, struct t_list *stack_tmp)
+void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 {
 	int i = 0;
 	int j = 0;
+	if (!stack_input)
+		exit(1);
 	while (stack_input->next != NULL)
 	{
 		printf("stack_A(%d): %d\n", i++, stack_input->content);
@@ -30,13 +32,13 @@ void ft_print_stack(struct t_list *stack_input, struct t_list *stack_tmp)
 
 int	main(int argc, char **argv)
 {
-	struct t_list *stack_input;
-	struct t_list *stack_tmp;
+	t_list *stack_input;
+	t_list *stack_tmp;
 
 	stack_input = malloc(sizeof(stack_input));
 	stack_tmp = malloc(sizeof(stack_tmp));
 	if (!stack_input)
-		exit(0);
+		exit(1);
 	if (!stack_tmp)
 		exit(1);
 	if (argc < 2)

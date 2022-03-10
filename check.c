@@ -6,17 +6,17 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:45:07 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 08:51:52 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 14:26:37 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-int	check_dup(struct t_list **stack_input, int value)
+int	check_dup(t_list **stack_input, int value)
 {
-	struct t_list *tmp;
-	struct t_list *curr;
+	t_list *tmp;
+	t_list *curr;
 
 	tmp = malloc(sizeof(tmp));
 	if (!tmp)

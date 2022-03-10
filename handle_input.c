@@ -6,13 +6,13 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 13:38:58 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 14:26:22 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void handle_input(struct t_list *stack_input, int argc, char **argv)
+void handle_input(t_list *stack_input, int argc, char **argv)
 {
 	int i;
 
@@ -34,9 +34,9 @@ void handle_input(struct t_list *stack_input, int argc, char **argv)
 // //-----------------------------------------------------
 }
 
-void fill_stack_input(struct t_list *stack_input, int value)
+void fill_stack_input(t_list *stack_input, int value)
 {
-	struct t_list *tmp;
+	t_list *tmp;
 
 	tmp = malloc(sizeof(tmp));
 	if (!tmp)
@@ -52,7 +52,7 @@ void fill_stack_input(struct t_list *stack_input, int value)
 	
 }
 
-void split_and_fill_stack_input(struct t_list **stack_input, char *tmp)
+void split_and_fill_stack_input(t_list **stack_input, char *tmp)
 {
 	char **nbrs;
 	int value;

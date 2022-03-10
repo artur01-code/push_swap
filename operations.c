@@ -6,17 +6,16 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 14:24:58 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 14:39:05 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-void ft_swap(struct t_list *stack_input)
+void ft_swap(t_list *stack_input)
 {
-	struct t_list *tmp;
-	struct t_list *tmp2;
+	t_list *tmp;
+	t_list *tmp2;
 
 	tmp = (t_list *)malloc(sizeof(tmp));
 	tmp2 = (t_list *)malloc(sizeof(tmp2));
@@ -31,11 +30,11 @@ void ft_swap(struct t_list *stack_input)
 	printf("First:%d\n", stack_input->content);
 	printf("Second:%d\n", stack_input->next->content);
 	printf("Third:%d\n", stack_input->next->next->content);
-		
+
 	free(tmp);	
 	free(tmp2);
 
-	// struct t_list *cur;
+	// t_list *cur;
 	// cur = stack_input;
 	// // printf("---------------------\n");
 	// // while (cur->next != NULL)
@@ -45,7 +44,7 @@ void ft_swap(struct t_list *stack_input)
 	// // }
 }
 
-void ft_push(struct t_list *stack_dst, struct t_list *stack_src)
+void ft_push(t_list *stack_dst, t_list *stack_src)
 {
 	while (stack_src->next->next != NULL)
 		stack_src = stack_src->next;
