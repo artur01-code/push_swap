@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 14:26:22 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 15:46:30 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void handle_input(t_list *stack_input, int argc, char **argv)
 	if (argc > 2)
 	{
 		while (argv[i])
-			fill_stack_input(stack_input, ft_atoi(argv[i++]));
+			fill_stack_input(&stack_input, ft_atoi(argv[i++]));
 	}
 	else
 		split_and_fill_stack_input(&stack_input, argv[1]);
@@ -34,7 +34,7 @@ void handle_input(t_list *stack_input, int argc, char **argv)
 // //-----------------------------------------------------
 }
 
-void fill_stack_input(t_list *stack_input, int value)
+void fill_stack_input(t_list **stack_input, int value)
 {
 	t_list *tmp;
 
@@ -43,13 +43,13 @@ void fill_stack_input(t_list *stack_input, int value)
 		exit(1);
 	tmp->content = value;
 	tmp->next = NULL;
-	if (check_dup(&stack_input, value))
+	if (check_dup(stack_input, value))
 		exit(1);
-	while (stack_input->next != NULL)
-		stack_input = stack_input->next;
-	stack_input->content = tmp->content;
-	stack_input->next = tmp;
-	
+	while ((*stack_input)->next != NULL)
+		(*stack_input) = (*stack_input)->next;
+	(*stack_input)->content = tmp->content;
+	(*stack_input)->next = tmp;
+	//free(tmp);
 }
 
 void split_and_fill_stack_input(t_list **stack_input, char *tmp)
@@ -61,5 +61,5 @@ void split_and_fill_stack_input(t_list **stack_input, char *tmp)
 	nbrs = ft_split(tmp, ' ');
 	i = 0;
 	while (nbrs[i])
-		fill_stack_input(*stack_input, ft_atoi(nbrs[i++]));
+		fill_stack_input(stack_input, ft_atoi(nbrs[i++]));
 }

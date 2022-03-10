@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 14:59:59 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 15:44:17 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	**ft_fillwords(char **new, const char *str, char c, size_t count);
 char	**ft_split(const char *str, char c);
 int	ft_atoi(const char *str);
 void handle_input(t_list *stack_input, int argc, char **argv);
-void fill_stack_input(t_list *stack_input, int value);
+void fill_stack_input(t_list **stack_input, int value);
 void split_and_fill_stack_input(t_list **stack_input, char *tmp);
 int	check_dup(t_list **stack_input, int value);
 void ft_swap(t_list **stack_input);

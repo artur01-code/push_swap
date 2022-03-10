@@ -1,0 +1,7 @@
+//check if int
+//check dups
+//ft_swap
+//ft_push
+
+leaks in my fill_stack_input
+	the tmp gets leaked
