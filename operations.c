@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 11:46:43 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 14:24:58 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,71 +18,44 @@ void ft_swap(struct t_list *stack_input)
 	struct t_list *tmp;
 	struct t_list *tmp2;
 
-	tmp = malloc(sizeof(tmp));
-	tmp2 = malloc(sizeof(tmp2));
+	tmp = (t_list *)malloc(sizeof(tmp));
+	tmp2 = (t_list *)malloc(sizeof(tmp2));
 
 	if (!stack_input)
 		return ;
-	tmp->next = stack_input;
-	tmp2->next = stack_input->next->next;
-	stack_input = (stack_input)->next;
-	stack_input->next = tmp->next;
-	stack_input->next->next = tmp2->next;
-	free(tmp);
+	tmp = stack_input;				//tmp: zeige auf 3 -> 1
+	tmp2 = stack_input->next->next;		//tmp2: zeige auf -55 -> 42
+	stack_input = stack_input->next;				//stack zeige auf 1 -> -55
+	stack_input->next = tmp;						//stack: 1 zeige auf 3	
+	stack_input->next->next = tmp2;					//stack: 3 zeige auf -55
+	printf("First:%d\n", stack_input->content);
+	printf("Second:%d\n", stack_input->next->content);
+	printf("Third:%d\n", stack_input->next->next->content);
+		
+	free(tmp);	
 	free(tmp2);
 
-	struct t_list *cur;
-	cur = stack_input;
-	printf("---------------------\n");
-	while (cur->next != NULL)
-	{
-		printf("%d\n", cur->content);
-		cur = cur->next;
-		//printf("%d\n", cur->content);
-	}
+	// struct t_list *cur;
+	// cur = stack_input;
+	// // printf("---------------------\n");
+	// // while (cur->next != NULL)
+	// // {
+	// // 	printf("%d\n", cur->content);
+	// // 	cur = cur->next;
+	// // }
 }
 
-/*
-int calc_last_two_elements(struct t_list **stack_input, struct t_list *last, struct t_list *before_last)
+void ft_push(struct t_list *stack_dst, struct t_list *stack_src)
 {
-	int	size;
-	int i;
+	while (stack_src->next->next != NULL)
+		stack_src = stack_src->next;
+	while (stack_dst->next != NULL)
+		stack_dst = stack_dst->next;
+	stack_dst->next = stack_src->next;
+	stack_dst->content = stack_src->content;
+	stack_src->next = NULL;
+	stack_src->content = 0;
 
-	last = *stack_input;
-	before_last = *stack_input;
-	size = 0;
-	i = 0;
-	while (last->next != NULL)
-	{
-		size++;
-		last = last->next;
-	}
-	while (i < size)
-		before_last = before_last->next;
-	return (size);
+	//printf("src:%d\n", stack_src->content);
+	//printf("dst:%d\n", stack_dst->content);
 }
-
-
-void ft_sa(struct t_list **stack_input)
-{
-	struct t_list *last;
-	struct t_list *before_last;
-	struct t_list *curr;
-	int size;
-	int i;
-
-	size = 0;
-	i = 0;
-	// last = malloc(sizeof(last));
-	// before_last = malloc(sizeof(before_last));
-	// curr = malloc(sizeof(curr));
-	curr = *stack_input;
-	calc_last_two_elements(stack_input, last, before_last);
-	while (i < size - 1)
-	{
-		curr = curr->next;
-	}
-	curr = last;
-	curr = curr->next;
-	curr = before_last;
-}*/

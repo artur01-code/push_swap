@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 11:52:28 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 13:38:58 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ void handle_input(struct t_list *stack_input, int argc, char **argv)
 	}
 	else
 		split_and_fill_stack_input(&stack_input, argv[1]);
-//---------------PRINT_TEST---------------------------
-	while (stack_input->next != NULL)
-	{
-		printf("%d\n", stack_input->content);
-		stack_input = stack_input->next;
-	}
-//-----------------------------------------------------
+// //---------------PRINT_TEST---------------------------
+// 	while (stack_input->next != NULL)
+// 	{
+// 		printf("%d\n", stack_input->content);
+// 		stack_input = stack_input->next;
+// 	}
+// 	printf("-------------------------------------------\n");
+// //-----------------------------------------------------
 }
 
 void fill_stack_input(struct t_list *stack_input, int value)
