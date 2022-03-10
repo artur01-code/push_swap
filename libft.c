@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:02:59 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/09 13:20:29 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 08:54:03 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,4 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	substring[i] = '\0';
 	return (substring);
-}
-
-char	*ft_strchr(char *s, char c)
-{
-	while (*s)
-		if (*s++ == c)
-			return (s);
-	return (0);
-}
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*((char *) s1 + i) != *((char *) s2 + i))
-			return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
-		i++;
-	}
-	return (0);
 }

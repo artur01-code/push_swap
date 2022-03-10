@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/09 15:09:07 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/10 08:52:42 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		printf("You have to pass a list: %d\n", argc); //CHANGE
 	else
-	{
 		handle_input(stack_input, argc, argv);
-		check_values(stack_input);
-	}
 	free(stack_input);
 	return (0);
 }
