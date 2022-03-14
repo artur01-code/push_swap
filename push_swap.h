@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 15:44:17 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/14 15:22:15 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void fill_stack_input(t_list **stack_input, int value);
 void split_and_fill_stack_input(t_list **stack_input, char *tmp);
 int	check_dup(t_list **stack_input, int value);
 void ft_swap(t_list **stack_input);
-void ft_push(t_list *stack_dst, t_list *stack_src);
-
+void ft_push(t_list **stack_dst, t_list **stack_src);
+void	ft_rotate(t_list **stack_input);
 
 
 
