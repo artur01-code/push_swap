@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 15:46:30 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/15 13:26:09 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,25 @@ void handle_input(t_list *stack_input, int argc, char **argv)
 	}
 	else
 		split_and_fill_stack_input(&stack_input, argv[1]);
-// //---------------PRINT_TEST---------------------------
-// 	while (stack_input->next != NULL)
-// 	{
-// 		printf("%d\n", stack_input->content);
-// 		stack_input = stack_input->next;
-// 	}
-// 	printf("-------------------------------------------\n");
-// //-----------------------------------------------------
 }
 
 void fill_stack_input(t_list **stack_input, int value)
 {
 	t_list *tmp;
+	t_list *current;
 
 	tmp = malloc(sizeof(tmp));
 	if (!tmp)
 		exit(1);
 	tmp->content = value;
 	tmp->next = NULL;
-	if (check_dup(stack_input, value))
+	current = *stack_input;
+	if (check_dup(&current, value))
 		exit(1);
-	while ((*stack_input)->next != NULL)
-		(*stack_input) = (*stack_input)->next;
-	(*stack_input)->content = tmp->content;
-	(*stack_input)->next = tmp;
+	while (current->next != NULL)
+		current = current->next;
+	current->content = tmp->content;
+	current->next = tmp;
 	//free(tmp);
 }
 

@@ -6,30 +6,34 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/14 15:45:24 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/16 09:11:06 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_print_stack(t_list **stack_input, t_list **stack_tmp)
+void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 {
+	t_list *tmp1;
+	t_list *tmp2;
 	int i = 0;
 	int j = 0;
-	if (*stack_input)
+	tmp1 = stack_input;
+	tmp2 = stack_tmp;
+	if (tmp1)
 	{
-		while ((*stack_input)->next != NULL)
+		while (tmp1->next != NULL && i < 15)
 		{
-			printf("stack_A(%d): %d\n", i++, (*stack_input)->content);
-			*stack_input = (*stack_input)->next;
+			printf("stack_A(%d): %d\n", i++, tmp1->content);
+			tmp1 = tmp1->next;
 		}
 	}
-	if (*stack_tmp)
+	if (tmp2)
 	{
-		while ((*stack_tmp)->next != NULL)
+		while (tmp2->next != NULL)
 		{
-			printf("stack_B(%d): %d\n", j++, (*stack_tmp)->content);
-			*stack_tmp = (*stack_tmp)->next;
+			printf("stack_B(%d): %d\n", j++, tmp2->content);
+			tmp2 = tmp2->next;
 		}
 	}
 }
@@ -41,6 +45,10 @@ int	main(int argc, char **argv)
 
 	stack_input = malloc(sizeof(t_list));
 	stack_tmp = malloc(sizeof(t_list));
+	printf("----------------------------------------\n");
+	printf("---------------START PRINTING-----------\n");
+	printf("----------------------------------------\n");
+	printf("------------------BEFORE----------------\n");
 	if (!stack_input)
 		exit(1);
 	if (!stack_tmp)
@@ -49,13 +57,17 @@ int	main(int argc, char **argv)
 		printf("You have to pass a list: %d\n", argc); //CHANGE
 	else
 		handle_input(stack_input, argc, argv);
-	ft_print_stack(&stack_input, &stack_tmp);
-	printf("-----------------------------------------\n");
+	ft_print_stack(stack_input, stack_tmp);
+	printf("------------------AFTER----------------\n");
+	//ft_swap(&stack_input);
 	//ft_swap(&stack_input);
 	//ft_push(&stack_tmp, &stack_input);
 	//ft_push(&stack_tmp, &stack_input);
 	//ft_rotate(&stack_input);
-	ft_print_stack(&stack_input, &stack_tmp);
+	ft_print_stack(stack_input, stack_tmp);
+	//printf("------------------SECOND----------------\n");
+	//ft_rotate(&stack_input);
+	//ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
 

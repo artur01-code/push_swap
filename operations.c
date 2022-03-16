@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/14 15:41:49 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/16 09:10:22 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,37 @@ void ft_swap(t_list **stack_input) //3 1 -55 ...
 
 void ft_push(t_list **stack_dst, t_list **stack_src)
 {
-	t_list *tmp;
+	t_list *tmp_dst;
+	t_list *tmp_src;
 
 	if (!(*stack_dst) || !(*stack_src))
-		return ;
-	tmp = *stack_src;
-	while ((*stack_src)->next->next != NULL)
-		(*stack_src) = (*stack_src)->next;
-	while ((*stack_dst)->next != NULL)
-		(*stack_dst) = (*stack_dst)->next;
-
-	(*stack_dst) = (*stack_src);
-	printf("CONTROLL: %d\n", (*stack_dst)->content);
-	(*stack_src)->next = NULL;
-	(*stack_src) = tmp;
+		printf("ERROR:\nStack not found\n");
+	tmp_dst = *stack_dst;
+	tmp_src = *stack_src;
+	while (tmp_src->next->next != NULL)
+		tmp_src = tmp_src->next;
+	while (tmp_dst->next != NULL)
+		tmp_dst = tmp_dst->next;
+	tmp_dst->content = tmp_src->content;
+	tmp_dst->next = tmp_src;
+	tmp_src->next = NULL;
 }
 
-void	ft_rotate(t_list **stack_input)
+void	ft_rotate(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
-	t_list **tmp;
+	t_list *tmp;
+	t_list *current;
 
 	if (!*stack_input)
 		return ;
-	*tmp = *stack_input;
-	(*tmp)->next = NULL;
-	*stack_input = (*stack_input)->next;
-	//while ((*stack_input)->next != NULL)
-	//	*(stack_input) = (*stack_input)->next;
-	//(*stack_input) = *tmp;
-	//free(tmp);
+	tmp->content = (*stack_input)->content;			//zeige auf die 1
+	tmp->next = NULL;
+	(*stack_input) = (*stack_input)->next;
+	current = (*stack_input);					//zeige auf die 2
+	while (current->next != NULL)			//gehe stack bis hinten durch
+	 	current = current->next;
+	current->content = tmp->content;
+	current->next = tmp;
+	//printf("CONTNET: %p\n", current->next->next);
+	
 }

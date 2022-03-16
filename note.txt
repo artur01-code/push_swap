@@ -1,7 +1,17 @@
 //check if int
 //check dups
+
+
 //ft_swap
-//ft_push
+	müsste eigt mit einer "current"-liste gemacht werden
+
+
+//ft_push auch 2x
+	nehme das letzte element (420) und packe sie auf stabel zwei
+
+//ft_rotate auch 2x
+
+
 
 leaks in my fill_stack_input
 	the tmp gets leaked
