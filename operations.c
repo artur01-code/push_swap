@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/16 09:10:22 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/16 09:12:36 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void ft_push(t_list **stack_dst, t_list **stack_src)
 	tmp_src->next = NULL;
 }
 
-void	ft_rotate(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
+void	ft_rotate_up(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
 	t_list *tmp;
 	t_list *current;
