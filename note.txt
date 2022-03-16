@@ -3,13 +3,15 @@
 
 
 //ft_swap
-	müsste eigt mit einer "current"-liste gemacht werden
+	müsste eigt mit einer "current"-liste gemacht werden?
 
 
 //ft_push auch 2x
-	nehme das letzte element (420) und packe sie auf stabel zwei
 
-//ft_rotate auch 2x
+//ft_rotate_up auch 2x
+
+ft_rotate_down 
+	funzt einmal, beim zweiten mal wird die Zahl des ersten rotates zwei mal angezeigt
 
 
 

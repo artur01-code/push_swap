@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/15 13:26:09 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:09:40 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void fill_stack_input(t_list **stack_input, int value)
 void split_and_fill_stack_input(t_list **stack_input, char *tmp)
 {
 	char **nbrs;
-	int value;
 	int i;
 
 	nbrs = ft_split(tmp, ' ');

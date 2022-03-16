@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/16 09:12:33 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:42:46 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,12 @@ int	main(int argc, char **argv)
 	//ft_push(&stack_tmp, &stack_input);
 	//ft_push(&stack_tmp, &stack_input);
 	//ft_rotate_up(&stack_input);
+	ft_rotate_down(&stack_input);
 	ft_print_stack(stack_input, stack_tmp);
-	//printf("------------------SECOND----------------\n");
+	printf("------------------SECOND----------------\n");
 	//ft_rotate_up(&stack_input);
-	//ft_print_stack(stack_input, stack_tmp);
+	ft_rotate_down(&stack_input);
+	ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
 

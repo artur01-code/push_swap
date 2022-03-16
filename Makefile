@@ -1,6 +1,6 @@
 # -*- Makefile -*-
 
-SRCS = main.c ft_split.c
+SRCS = main.c ft_split.c check.c ft_atoi.c handle_input.c libft.c operations.c
 
 OBJS = $(SRCS:.c=.o)
 
