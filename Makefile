@@ -19,7 +19,7 @@ NAME = push_swap
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 bonus:		$(NAME) $(BONUS_O)
 			$(LIB1) $(NAME) $(BONUS_O)

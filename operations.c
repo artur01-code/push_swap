@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 12:05:46 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 13:09:19 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ Do nothing if src is empty.
 */
 void	ft_push(t_list **stack_dst, t_list **stack_src)
 {
-	t_list	*tmp_dst;
 	t_list	*value;
 
 	if (!(*stack_src))

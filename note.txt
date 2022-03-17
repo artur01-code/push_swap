@@ -9,8 +9,8 @@
 //ft_push 
 	läuft auch 2x, aber die erste zahl darf keine 0 sein
 
-ft_rotate_up
-	segfault
+//ft_rotate_up
+	läuft auch 2x
 
 //ft_rotate_down 
 	läuft auch 2x
