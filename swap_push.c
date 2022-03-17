@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   swap_push.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 12:45:07 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 13:26:53 by jtomala          ###   ########.fr       */
+/*   Created: 2022/03/17 13:19:34 by jtomala           #+#    #+#             */
+/*   Updated: 2022/03/17 13:20:34 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-int	check_dup(t_list **stack_input, int value)
+void sa(t_list **stack_input)
 {
-	t_list	*curr;
-
-	curr = *stack_input;
-	while (curr->next != NULL)
-	{
-		if (curr->content == value)
-			return (1);
-		else
-			curr = curr->next;
-	}
-	return (0);
+	ft_swap(stack_input);
 }

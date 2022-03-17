@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 12:04:18 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 13:29:26 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void	fill_stack_input(t_list **stack_input, int value)
 {
 	t_list	*tmp;
 
+	if(check_dup(stack_input, value))
+	{
+		printf("Error:\nDuplicate located.\n");
+		exit(1);
+	}
 	tmp = ft_lstnew(value);
 	ft_lstadd_back(stack_input, tmp);
 }
