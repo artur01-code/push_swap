@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/16 13:42:46 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:42:42 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,20 @@ void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 	{
 		while (tmp1->next != NULL && i < 15)
 		{
-			printf("stack_A(%d): %d\n", i++, tmp1->content);
+			printf("stack_A(%d): %d		has the pointer %p points to %p\n", i++, tmp1->content, tmp1, tmp1->next);
 			tmp1 = tmp1->next;
 		}
+		printf("stack_A(%d): %d		has the pointer %p points to %p\n", i++, tmp1->content, tmp1, tmp1->next);
 	}
+	printf("#################\n");
 	if (tmp2)
 	{
 		while (tmp2->next != NULL)
 		{
-			printf("stack_B(%d): %d\n", j++, tmp2->content);
+			printf("stack_B(%d): %d		has the pointer %p points to %p\n", j++, tmp2->content, tmp2, tmp2->next);
 			tmp2 = tmp2->next;
 		}
+		printf("stack_B(%d): %d		has the pointer %p points to %p\n", j++, tmp2->content, tmp2, tmp2->next);
 	}
 }
 
@@ -62,13 +65,13 @@ int	main(int argc, char **argv)
 	//ft_swap(&stack_input);
 	//ft_swap(&stack_input);
 	//ft_push(&stack_tmp, &stack_input);
-	//ft_push(&stack_tmp, &stack_input);
 	//ft_rotate_up(&stack_input);
 	ft_rotate_down(&stack_input);
 	ft_print_stack(stack_input, stack_tmp);
 	printf("------------------SECOND----------------\n");
 	//ft_rotate_up(&stack_input);
 	ft_rotate_down(&stack_input);
+	//ft_push(&stack_tmp, &stack_input);
 	ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);

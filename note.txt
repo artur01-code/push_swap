@@ -3,15 +3,17 @@
 
 
 //ft_swap
-	müsste eigt mit einer "current"-liste gemacht werden?
+	läuft auch 2x
 
 
-//ft_push auch 2x
+//ft_push 
+	läuft auch 2x, aber die erste zahl darf keine 0 sein
 
-//ft_rotate_up auch 2x
+ft_rotate_up
+	segfault
 
-ft_rotate_down 
-	funzt einmal, beim zweiten mal wird die Zahl des ersten rotates zwei mal angezeigt
+//ft_rotate_down 
+	läuft auch 2x
 
 
 

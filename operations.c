@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/16 14:43:23 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:39:34 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,16 @@ Do nothing if src is empty.
 void ft_push(t_list **stack_dst, t_list **stack_src)
 {
 	t_list *tmp_dst;
-	t_list *tmp_src;
+	t_list *value;
 
 	if (!(*stack_src))
 		return ;
-	tmp_dst = *stack_dst;
-	tmp_src = *stack_src;
-	while (tmp_src->next->next != NULL)
-		tmp_src = tmp_src->next;
-	while (tmp_dst->next != NULL)
-		tmp_dst = tmp_dst->next;
-	tmp_dst->content = tmp_src->content;
-	tmp_dst->next = tmp_src;
-	tmp_src->next = NULL;
+	value = ft_lstnew((*stack_src)->content);
+	if ((*stack_dst)->content == 0)
+		*stack_dst = value;
+	else
+		ft_lstadd_back(stack_dst, value);
+	*stack_src = (*stack_src)->next;
 }
 
 void	ft_rotate_up(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
@@ -69,6 +66,7 @@ void	ft_rotate_up(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
 	current->next = tmp;
 }
 
+/*
 void	ft_rotate_down(t_list **stack_input)  // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
 	t_list	*beginning;
@@ -86,4 +84,25 @@ void	ft_rotate_down(t_list **stack_input)  // 1 2 3 4 5 -3 -55 0 -5 99 420
 	*stack_input = current;					//zeige als erstes auf 420
 	current->next = beginning;				//420 zeige auf die 1
 	printf("NEW END: %d zeigt auf %p\n-----\n", new_end->content, new_end->next);
+}
+*/
+
+
+/*
+Jonas funktion
+*/
+void	ft_rotate_down(t_list **stack_input)  // 1 2 3 4 5 -3 -55 0 -5 99 420
+{
+	t_list *tmp;
+	t_list *start_list;
+	
+	start_list = *stack_input; 					//zeige auf den start
+	tmp = *stack_input;							//zeige auch auf den start
+	while (tmp->next != NULL)					//gehe zum ende
+		tmp = tmp->next;
+	while ((*stack_input)->next->next != NULL)	//gehe zum vorletzten
+		(*stack_input) = (*stack_input)->next;
+	(*stack_input)->next = NULL;				//vorletztes wird zum letzten
+	tmp->next = start_list;						//altes ende zeige auf den alten anfang
+	(*stack_input) = tmp;						//liste zeige auf neuen Start
 }

@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/16 13:09:40 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:11:17 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void handle_input(t_list *stack_input, int argc, char **argv)
 {
 	int i;
 
-	i = 1;
+	i = 2;
 	if (argc > 2)
 	{
+		(stack_input)->content = ft_atoi(argv[1]);
+		(stack_input)->next = NULL;
 		while (argv[i])
 			fill_stack_input(&stack_input, ft_atoi(argv[i++]));
 	}
@@ -26,6 +28,7 @@ void handle_input(t_list *stack_input, int argc, char **argv)
 		split_and_fill_stack_input(&stack_input, argv[1]);
 }
 
+/*
 void fill_stack_input(t_list **stack_input, int value)
 {
 	t_list *tmp;
@@ -42,8 +45,17 @@ void fill_stack_input(t_list **stack_input, int value)
 	while (current->next != NULL)
 		current = current->next;
 	current->content = tmp->content;
-	current->next = tmp;
+	current->next = tmp;					//muss eigt auf NULL zeigen
+	printf("%p\n", tmp);
 	//free(tmp);
+}*/
+
+void fill_stack_input(t_list **stack_input, int value)
+{
+	t_list *tmp;
+
+	tmp = ft_lstnew(value);
+	ft_lstadd_back(stack_input, tmp);
 }
 
 void split_and_fill_stack_input(t_list **stack_input, char *tmp)
