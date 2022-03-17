@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 11:39:34 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:56:17 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,48 +48,26 @@ void ft_push(t_list **stack_dst, t_list **stack_src)
 	*stack_src = (*stack_src)->next;
 }
 
+/*
+ Shift up all elements of stack_input by 1.
+The first element becomes the last one.
+*/
 void	ft_rotate_up(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
 	t_list *tmp;
 	t_list *current;
-
-	if (!*stack_input)
-		return ;
-	tmp = NULL;
-	tmp->content = (*stack_input)->content;			//zeige auf die 1
-	tmp->next = NULL;
-	(*stack_input) = (*stack_input)->next;
-	current = (*stack_input);					//zeige auf die 2
-	while (current->next != NULL)			//gehe stack bis hinten durch
-	 	current = current->next;
-	current->content = tmp->content;
-	current->next = tmp;
-}
-
-/*
-void	ft_rotate_down(t_list **stack_input)  // 1 2 3 4 5 -3 -55 0 -5 99 420
-{
-	t_list	*beginning;
-	t_list	*current;
-	t_list *new_end;
 	
-	beginning = *stack_input;
 	current = *stack_input;
-	printf("BEG: %d(%p) zeigt auf %p\n", beginning->content, beginning, beginning->next);
-	while (current->next->next != NULL)			//gehe zum vorletzten element
-		current = current->next;
-	new_end = current;						//zeige auf vorletztes element (99)
-	current = current->next;				//gehe weiter auf auf letztes (420)
-	new_end->next = NULL;					//99 zeige auf NULL (end)
-	*stack_input = current;					//zeige als erstes auf 420
-	current->next = beginning;				//420 zeige auf die 1
-	printf("NEW END: %d zeigt auf %p\n-----\n", new_end->content, new_end->next);
+	tmp = ft_lstlast(*stack_input);
+	tmp->next = *stack_input;			//das letzte zeigt auf das erste
+	*stack_input = (*stack_input)->next; //zeiger zeigt auf das zweite
+	tmp->next->next = NULL;
 }
-*/
-
 
 /*
-Jonas funktion
+Reverse:
+	Shift down all elements of stack_input by 1.
+	The last element becomes the first one.
 */
 void	ft_rotate_down(t_list **stack_input)  // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
