@@ -16,6 +16,7 @@
 	läuft auch 2x
 
 
+change printf to your own!!!
 
 leaks in my fill_stack_input
 	the tmp gets leaked

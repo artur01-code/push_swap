@@ -6,12 +6,13 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 13:12:58 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:04:59 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
 void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 {
 	t_list *tmp1;
@@ -41,6 +42,7 @@ void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 	}
 }
 
+
 static void do_tests(t_list *stack_input, t_list *stack_tmp)
 {
 	printf("----------------------------------------\n");
@@ -52,7 +54,7 @@ static void do_tests(t_list *stack_input, t_list *stack_tmp)
 	//ft_swap(&stack_input);
 	//ft_swap(&stack_input);
 	//ft_push(&stack_tmp, &stack_input);
-	ft_rotate_up(&stack_input);
+	//ft_rotate_up(&stack_input);
 	//ft_rotate_down(&stack_input);
 	ft_print_stack(stack_input, stack_tmp);
 	printf("------------------SECOND----------------\n");
@@ -60,7 +62,7 @@ static void do_tests(t_list *stack_input, t_list *stack_tmp)
 	//ft_rotate_down(&stack_input);
 	//ft_push(&stack_tmp, &stack_input);
 	ft_print_stack(stack_input, stack_tmp);
-}
+}*/
 
 int	main(int argc, char **argv)
 {
@@ -75,7 +77,9 @@ int	main(int argc, char **argv)
 		exit(1);
 	else
 		handle_input(stack_input, argc, argv);
-	do_tests(stack_input, stack_tmp);
+	//do_tests(stack_input, stack_tmp);
+	//merge(&stack_input);
+	
 	free(stack_input);
 	free(stack_tmp);
 	return (0);
