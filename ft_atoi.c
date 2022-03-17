@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:44:55 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/09 14:14:23 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:03:27 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	}
 	while (str[c])
 	{
-		if(str[c] >= '0' && str[c] <= '9')
+		if (str[c] >= '0' && str[c] <= '9')
 			res = (res * 10) + (str[c] - '0');
 		else
 			exit(0);

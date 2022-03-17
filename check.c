@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:45:07 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 14:26:37 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:03:05 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	check_dup(t_list **stack_input, int value)
 {
-	t_list *tmp;
-	t_list *curr;
+	t_list	*tmp;
+	t_list	*curr;
 
 	tmp = malloc(sizeof(tmp));
 	if (!tmp)

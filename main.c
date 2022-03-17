@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 11:55:51 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:59:35 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,12 @@ void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 	}
 }
 
-int	main(int argc, char **argv)
+static void do_tests(t_list *stack_input, t_list *stack_tmp)
 {
-	t_list *stack_input;
-	t_list *stack_tmp;
-
-	stack_input = malloc(sizeof(t_list));
-	stack_tmp = malloc(sizeof(t_list));
 	printf("----------------------------------------\n");
 	printf("---------------START PRINTING-----------\n");
 	printf("----------------------------------------\n");
 	printf("------------------BEFORE----------------\n");
-	if (!stack_input)
-		exit(1);
-	if (!stack_tmp)
-		exit(1);
-	if (argc < 2)
-		printf("You have to pass a list: %d\n", argc); //CHANGE
-	else
-		handle_input(stack_input, argc, argv);
 	ft_print_stack(stack_input, stack_tmp);
 	printf("------------------AFTER----------------\n");
 	//ft_swap(&stack_input);
@@ -73,8 +60,23 @@ int	main(int argc, char **argv)
 	//ft_rotate_down(&stack_input);
 	//ft_push(&stack_tmp, &stack_input);
 	ft_print_stack(stack_input, stack_tmp);
+}
+
+int	main(int argc, char **argv)
+{
+	t_list *stack_input;
+	t_list *stack_tmp;
+
+	stack_input = malloc(sizeof(t_list));
+	stack_tmp = malloc(sizeof(t_list));
+	if (!stack_input || !stack_tmp)
+		exit(1);
+	if (argc < 2)
+		printf("You have to pass a list: %d\n", argc); //CHANGE
+	else
+		handle_input(stack_input, argc, argv);
+	do_tests(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
-
 	return (0);
 }

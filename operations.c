@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 11:56:17 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:05:46 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /*
  Swap the first 2 elements at the top of stack x
 */
-void ft_swap(t_list **stack_input) //3 1 -55 ...
+void	ft_swap(t_list **stack_input) //3 1 -55 ...
 {
-	t_list *tmp;
-	t_list *tmp2;
+	t_list	*tmp;
+	t_list	*tmp2;
 
 	if (!*stack_input)
 		return ;
@@ -33,10 +33,10 @@ void ft_swap(t_list **stack_input) //3 1 -55 ...
 Take the first element at the top of src and put it at the top of dst.
 Do nothing if src is empty.
 */
-void ft_push(t_list **stack_dst, t_list **stack_src)
+void	ft_push(t_list **stack_dst, t_list **stack_src)
 {
-	t_list *tmp_dst;
-	t_list *value;
+	t_list	*tmp_dst;
+	t_list	*value;
 
 	if (!(*stack_src))
 		return ;
@@ -54,8 +54,8 @@ The first element becomes the last one.
 */
 void	ft_rotate_up(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
-	t_list *tmp;
-	t_list *current;
+	t_list	*tmp;
+	t_list	*current;
 	
 	current = *stack_input;
 	tmp = ft_lstlast(*stack_input);
@@ -71,8 +71,8 @@ Reverse:
 */
 void	ft_rotate_down(t_list **stack_input)  // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
-	t_list *tmp;
-	t_list *start_list;
+	t_list	*tmp;
+	t_list	*start_list;
 	
 	start_list = *stack_input; 					//zeige auf den start
 	tmp = *stack_input;							//zeige auch auf den start
