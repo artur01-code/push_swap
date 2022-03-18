@@ -6,13 +6,13 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 15:04:59 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/18 12:27:42 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
+
 void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 {
 	t_list *tmp1;
@@ -42,7 +42,7 @@ void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 	}
 }
 
-
+/*
 static void do_tests(t_list *stack_input, t_list *stack_tmp)
 {
 	printf("----------------------------------------\n");
@@ -64,6 +64,8 @@ static void do_tests(t_list *stack_input, t_list *stack_tmp)
 	ft_print_stack(stack_input, stack_tmp);
 }*/
 
+
+
 int	main(int argc, char **argv)
 {
 	t_list *stack_input;
@@ -79,7 +81,10 @@ int	main(int argc, char **argv)
 		handle_input(stack_input, argc, argv);
 	//do_tests(stack_input, stack_tmp);
 	//merge(&stack_input);
-	
+	ft_print_stack(stack_input, stack_tmp);
+	printf("------------------AFTER----------------\n");
+	presort(&stack_input);
+	ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
 	return (0);

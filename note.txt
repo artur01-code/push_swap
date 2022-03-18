@@ -20,3 +20,5 @@ change printf to your own!!!
 
 leaks in my fill_stack_input
 	the tmp gets leaked
+
+if the nbr is bigger the MAXINT print Error and exit

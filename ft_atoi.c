@@ -6,14 +6,14 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:44:55 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 13:29:19 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/18 15:01:21 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-static void not_an_int()
+static void	not_an_int(void)
 {
 	printf("Error:\nInput is not an Interger.\n");
 	exit(1);
