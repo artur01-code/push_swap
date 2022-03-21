@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/18 11:02:06 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 11:59:49 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list{
 	int				content;
 	struct s_list	*next;
+	int				index;
 }				t_list;
 
 t_list	*ft_lstnew(int content);
@@ -51,9 +52,7 @@ void	rr(t_list **stack_a, t_list **stack_b);
 void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
-void	presort(t_list **stack_input);
-t_list	**merge_sort(t_list **stack_left, t_list **stack_right);
-t_list	**one_stack_empty(t_list **stack_left, t_list **stack_right, t_list **new_list);
+void indexing(t_list **stack_a);
 
 
 #endif

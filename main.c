@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/18 12:27:42 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 12:20:19 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,26 @@ void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 {
 	t_list *tmp1;
 	t_list *tmp2;
-	int i = 0;
-	int j = 0;
 	tmp1 = stack_input;
 	tmp2 = stack_tmp;
 	if (tmp1)
 	{
-		while (tmp1->next != NULL && i < 15)
+		while (tmp1->next != NULL)
 		{
-			printf("stack_A(%d): %d		has the pointer %p points to %p\n", i++, tmp1->content, tmp1, tmp1->next);
+			printf("stack_A(%d): %d\n", tmp1->index, tmp1->content);
 			tmp1 = tmp1->next;
 		}
-		printf("stack_A(%d): %d		has the pointer %p points to %p\n", i++, tmp1->content, tmp1, tmp1->next);
+		printf("stack_A(%d): %d\n", tmp1->index, tmp1->content);
 	}
-	printf("#################\n");
+	printf("########################################\n");
 	if (tmp2)
 	{
 		while (tmp2->next != NULL)
 		{
-			printf("stack_B(%d): %d		has the pointer %p points to %p\n", j++, tmp2->content, tmp2, tmp2->next);
+			printf("stack_B(%d): %d\n", tmp2->index, tmp2->content);
 			tmp2 = tmp2->next;
 		}
-		printf("stack_B(%d): %d		has the pointer %p points to %p\n", j++, tmp2->content, tmp2, tmp2->next);
+		printf("stack_B(%d): %d\n", tmp2->index, tmp2->content);
 	}
 }
 
@@ -80,10 +78,7 @@ int	main(int argc, char **argv)
 	else
 		handle_input(stack_input, argc, argv);
 	//do_tests(stack_input, stack_tmp);
-	//merge(&stack_input);
-	ft_print_stack(stack_input, stack_tmp);
-	printf("------------------AFTER----------------\n");
-	presort(&stack_input);
+	indexing(&stack_input);
 	ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
