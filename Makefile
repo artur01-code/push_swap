@@ -1,8 +1,17 @@
 # -*- Makefile -*-
 
-SRCS = main.c ft_split.c check.c ft_atoi.c handle_input.c libft.c \
-		operations.c libft_lst.c merge_sort.c swap_push.c rotate.c \
-		rotate_reverse.c
+SRCS =	main.c \
+		src/ft_split.c \
+		src/check.c \
+		src/ft_atoi.c \
+		src/handle_input.c \
+		src/libft.c \
+		src/operations.c \
+		src/libft_lst.c \
+		src/swap_push.c \
+		src/rotate.c \
+		src/rotate_reverse.c \
+		merge_sort.c
 
 OBJS = $(SRCS:.c=.o)
 

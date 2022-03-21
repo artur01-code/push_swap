@@ -6,11 +6,11 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/18 10:41:26 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 10:04:59 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	handle_input(t_list *stack_input, int argc, char **argv)
 {

@@ -6,11 +6,11 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:02:59 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/10 08:54:03 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 10:05:16 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 size_t	ft_strlen(const char *s)
 {

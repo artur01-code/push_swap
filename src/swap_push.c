@@ -6,11 +6,11 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:19:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 15:34:56 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 10:05:33 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /*
 Swap the first 2 elements at the top of stack a.

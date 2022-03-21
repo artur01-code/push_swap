@@ -6,11 +6,11 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:01 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/17 10:13:12 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 10:04:55 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 size_t	ft_countwords(const char *str, char c)
 {
