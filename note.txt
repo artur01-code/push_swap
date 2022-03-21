@@ -16,6 +16,8 @@
 	läuft auch 2x
 
 
+stack_b is not getting empty at all
+
 change printf to your own!!!
 
 leaks in my fill_stack_input

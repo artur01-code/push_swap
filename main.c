@@ -6,17 +6,25 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 12:20:19 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/21 15:47:17 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+static void print_bin(unsigned int nbr)
+{
+	if (nbr > 1)
+		print_bin (nbr >> 1);
+	printf("%d", nbr & 1);	
+}*/
 
 void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 {
 	t_list *tmp1;
 	t_list *tmp2;
+
 	tmp1 = stack_input;
 	tmp2 = stack_tmp;
 	if (tmp1)
@@ -26,6 +34,7 @@ void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
 			printf("stack_A(%d): %d\n", tmp1->index, tmp1->content);
 			tmp1 = tmp1->next;
 		}
+
 		printf("stack_A(%d): %d\n", tmp1->index, tmp1->content);
 	}
 	printf("########################################\n");
@@ -79,6 +88,8 @@ int	main(int argc, char **argv)
 		handle_input(stack_input, argc, argv);
 	//do_tests(stack_input, stack_tmp);
 	indexing(&stack_input);
+	ft_print_stack(stack_input, stack_tmp);
+	ft_raddixsort(&stack_input, &stack_tmp);
 	ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
