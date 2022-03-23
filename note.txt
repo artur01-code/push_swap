@@ -16,8 +16,8 @@
 	läuft auch 2x
 
 
-stack_b is not getting empty at all
-	b can not be empt at all
+//stack_b is not getting empty at all
+	//b can not be empt at all
 	//if pb gets done: the index gets lost
 
 
@@ -25,10 +25,12 @@ stack_b is not getting empty at all
 
 
 
-
 change printf to your own!!!
+	changed to write, but make sure it is
 
 leaks in my fill_stack_input
 	the tmp gets leaked
 
 if the nbr is bigger the MAXINT print Error and exit
+
+if the stack is still sorted print new line

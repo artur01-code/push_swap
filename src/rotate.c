@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:13:33 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 10:05:29 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:55:46 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ The first element becomes the last one.
 void	ra(t_list **stack_a)
 {
 	ft_rotate_up(stack_a);
-	printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 /*
@@ -29,7 +29,7 @@ The first element becomes the last one.
 void	rb(t_list **stack_b)
 {
 	ft_rotate_up(stack_b);
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 /*
@@ -39,5 +39,5 @@ void	rr(t_list **stack_a, t_list **stack_b)
 {
 	ft_rotate_up(stack_a);
 	ft_rotate_up(stack_b);
-	printf("rr\n");
+	write(1, "rr\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/23 11:00:16 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:52:50 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,39 @@ static void do_tests(t_list *stack_input, t_list *stack_tmp)
 	ft_push(&stack_tmp, &stack_input);
 	ft_print_stack(stack_input, stack_tmp);
 }
-*/
+
+void small_sort(t_list *stack_a)
+{
+	t_list *content;
+	int	big;
+
+	content = ft_highest(stack_a);
+	big = content->content;
+	if (stack_a->content == big)
+	{
+		ra(&stack_a);
+		if (stack_a->content > stack_a->next->content)
+			sa(&stack_a);
+	}
+	else if (stack_a->next->content == big)
+	{
+		rra(&stack_a);
+		if (stack_a->content > stack_a->next->content)
+			sa(&stack_a);
+	}
+	else
+	{
+		if (stack_a->content > stack_a->next->content)
+			sa(&stack_a);
+	}
+}*/
 
 
 int	main(int argc, char **argv)
 {
 	t_list *stack_input;
 	t_list *stack_tmp;
+	int amount_of_elements;
 
 	stack_input = malloc(sizeof(t_list));
 	stack_tmp = malloc(sizeof(t_list));
@@ -86,12 +112,13 @@ int	main(int argc, char **argv)
 		exit(1);
 	else
 		handle_input(stack_input, argc, argv);
-	indexing(&stack_input);
+	amount_of_elements = indexing(&stack_input);
 	stack_tmp->index = -1;
 	//do_tests(stack_input, stack_tmp);
-	ft_print_stack(stack_input, stack_tmp);
+	//ft_print_stack(stack_input, stack_tmp);
 	ft_raddixsort(&stack_input, &stack_tmp);
-	ft_print_stack(stack_input, stack_tmp);
+	stack_tmp = NULL;
+	//ft_print_stack(stack_input, stack_tmp);
 	free(stack_input);
 	free(stack_tmp);
 	return (0);

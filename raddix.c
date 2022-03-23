@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:31:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/23 11:01:29 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:47:34 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_raddixsort(t_list **stack_a, t_list **stack_b)
 
 	max_bits = ft_calc_max_bits(*stack_a);
 	elements_size = ft_count_elements(*stack_a);
+	//printf("ELEMENTS: %d\n", elements_size);
 
 	i = 0;
 	j = 0;
@@ -63,7 +64,6 @@ void	ft_raddixsort(t_list **stack_a, t_list **stack_b)
 				pb(stack_a, stack_b);
 			j++;
 		}
-		j = 0;
 		while ((*stack_b)->next != NULL)
 			pa(stack_a, stack_b);
 		j = 0;
