@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 10:05:20 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 10:50:08 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,23 @@ Do nothing if src is empty.
 */
 void	ft_push(t_list **stack_dst, t_list **stack_src)
 {
-	t_list	*value;
+	t_list *tmp;
 
-	if (!(*stack_src))
+	if (!*stack_src)
 		return ;
-	value = ft_lstnew((*stack_src)->content);
-	if ((*stack_dst)->content == 0)
-		*stack_dst = value;
+	tmp = *stack_dst;
+	if ((*stack_dst)->index == 0)
+	{
+		(*stack_dst)->content = (*stack_src)->content;
+		(*stack_dst)->index = (*stack_src)->index;
+		(*stack_src) = (*stack_src)->next;
+	}
 	else
-		ft_lstadd_back(stack_dst, value);
-	*stack_src = (*stack_src)->next;
+	{
+		*stack_dst = *stack_src;
+		*stack_src = (*stack_src)->next;
+		(*stack_dst)->next = tmp;
+	}
 }
 
 /*

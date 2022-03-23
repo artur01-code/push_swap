@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:29:55 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 15:50:50 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 10:50:42 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	indexing(t_list **stack_a)
 	tmp = *stack_a;
 	piv = ft_highest(*stack_a);
 	counter = ft_count_and_init(*stack_a);
-	i = 0;
-	while (i < counter)
+	i = 1;
+	while (i <= counter)
 	{
 		while (tmp != NULL)
 		{

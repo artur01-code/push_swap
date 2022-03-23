@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 15:47:17 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 11:00:16 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,17 @@ static void do_tests(t_list *stack_input, t_list *stack_tmp)
 	printf("------------------AFTER----------------\n");
 	//ft_swap(&stack_input);
 	//ft_swap(&stack_input);
-	//ft_push(&stack_tmp, &stack_input);
+	ft_push(&stack_tmp, &stack_input);
 	//ft_rotate_up(&stack_input);
 	//ft_rotate_down(&stack_input);
 	ft_print_stack(stack_input, stack_tmp);
 	printf("------------------SECOND----------------\n");
-	ft_rotate_up(&stack_input);
+	//ft_rotate_up(&stack_input);
 	//ft_rotate_down(&stack_input);
-	//ft_push(&stack_tmp, &stack_input);
+	ft_push(&stack_tmp, &stack_input);
 	ft_print_stack(stack_input, stack_tmp);
-}*/
-
+}
+*/
 
 
 int	main(int argc, char **argv)
@@ -86,8 +86,9 @@ int	main(int argc, char **argv)
 		exit(1);
 	else
 		handle_input(stack_input, argc, argv);
-	//do_tests(stack_input, stack_tmp);
 	indexing(&stack_input);
+	stack_tmp->index = -1;
+	//do_tests(stack_input, stack_tmp);
 	ft_print_stack(stack_input, stack_tmp);
 	ft_raddixsort(&stack_input, &stack_tmp);
 	ft_print_stack(stack_input, stack_tmp);

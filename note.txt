@@ -17,6 +17,14 @@
 
 
 stack_b is not getting empty at all
+	b can not be empt at all
+	//if pb gets done: the index gets lost
+
+
+
+
+
+
 
 change printf to your own!!!
 

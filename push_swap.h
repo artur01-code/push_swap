@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 13:48:45 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 09:13:04 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		ft_count_elements(t_list *stack_a);
 void	indexing(t_list **stack_a);
 int		ft_highest_index(t_list *stack_a);
 void	ft_raddixsort(t_list **stack_a, t_list **stack_b);
+void	ft_print_stack(t_list *stack_input, t_list *stack_tmp); //RM
 
 
 #endif

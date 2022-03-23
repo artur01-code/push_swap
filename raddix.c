@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:31:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 15:57:58 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/23 11:01:29 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,17 @@ void	ft_raddixsort(t_list **stack_a, t_list **stack_b)
 {
 	int i;
 	int j;
+	int max_bits;
+	int elements_size;
+
+	max_bits = ft_calc_max_bits(*stack_a);
+	elements_size = ft_count_elements(*stack_a);
 
 	i = 0;
 	j = 0;
-	while (i < ft_calc_max_bits(*stack_a))
+	while (i < max_bits)
 	{
-		printf("INDEX: %d\n", (*stack_a)->index);
-		while (j < ft_count_elements(*stack_a))
+		while (j < elements_size)
 		{
 			if ((((*stack_a)->index >> i) & 1) == 1)
 				ra(stack_a);
@@ -60,8 +64,9 @@ void	ft_raddixsort(t_list **stack_a, t_list **stack_b)
 			j++;
 		}
 		j = 0;
-		i++;
 		while ((*stack_b)->next != NULL)
 			pa(stack_a, stack_b);
+		j = 0;
+		i++;
 	}
 }
