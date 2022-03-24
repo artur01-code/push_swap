@@ -21,10 +21,6 @@
 	//if pb gets done: the index gets lost
 
 
-
-
-
-
 change printf to your own!!!
 	changed to write, but make sure it is
 

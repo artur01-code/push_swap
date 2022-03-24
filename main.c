@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/24 12:33:52 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/24 13:17:05 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void do_tests(t_list *stack_input, t_list *stack_tmp)
 	//ft_rotate_down(&stack_input);
 	ft_push(&stack_tmp, &stack_input);
 	ft_print_stack(stack_input, stack_tmp);
-}
+}*/
 
 void small_sort(t_list *stack_a)
 {
@@ -95,7 +95,8 @@ void small_sort(t_list *stack_a)
 		if (stack_a->content > stack_a->next->content)
 			sa(&stack_a);
 	}
-}*/
+}
+
 void ft_free_var(t_list *stack_input, t_list *stack_tmp)
 {
 	while (stack_input->next != NULL)
@@ -105,6 +106,25 @@ void ft_free_var(t_list *stack_input, t_list *stack_tmp)
 	}
 	free(stack_input);
 	free(stack_tmp);
+}
+
+void check_order(t_list *stack_a)
+{
+	t_list *tmp;
+	int check_amount;
+	
+	tmp = stack_a;
+	check_amount = 1;
+	while (tmp->next != NULL)
+	{
+		if (tmp->index == check_amount)
+			check_amount++;
+		else
+			return ;
+		tmp = tmp->next;
+	}
+	ft_free_var(stack_a, NULL);
+	exit(0);
 }
 
 int	main(int argc, char **argv)
@@ -123,11 +143,13 @@ int	main(int argc, char **argv)
 		handle_input(stack_input, argc, argv);
 	amount_of_elements = indexing(&stack_input);
 	stack_tmp->index = -1;
+	check_order(stack_input);
 	//do_tests(stack_input, stack_tmp);
 	//ft_print_stack(stack_input, stack_tmp);
 	if (amount_of_elements == 5)
-		printf("small_sort with %d elements\n", amount_of_elements);
-	ft_raddixsort(&stack_input, &stack_tmp);
+		small_sort(stack_input);
+	else
+		ft_raddixsort(&stack_input, &stack_tmp);
 	//ft_print_stack(stack_input, stack_tmp);
 	ft_free_var(stack_input,stack_tmp);
 	
