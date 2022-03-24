@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:11:20 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/21 10:05:12 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/24 12:11:00 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
 
-	if (!new)
-		return ;
 	if (!*lst)
 	{
 		current = new;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/23 13:52:50 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/24 12:33:52 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,16 @@ void small_sort(t_list *stack_a)
 			sa(&stack_a);
 	}
 }*/
-
+void ft_free_var(t_list *stack_input, t_list *stack_tmp)
+{
+	while (stack_input->next != NULL)
+	{
+		free(stack_input);
+		stack_input = stack_input->next;
+	}
+	free(stack_input);
+	free(stack_tmp);
+}
 
 int	main(int argc, char **argv)
 {
@@ -116,10 +125,12 @@ int	main(int argc, char **argv)
 	stack_tmp->index = -1;
 	//do_tests(stack_input, stack_tmp);
 	//ft_print_stack(stack_input, stack_tmp);
+	if (amount_of_elements == 5)
+		printf("small_sort with %d elements\n", amount_of_elements);
 	ft_raddixsort(&stack_input, &stack_tmp);
-	stack_tmp = NULL;
 	//ft_print_stack(stack_input, stack_tmp);
-	free(stack_input);
-	free(stack_tmp);
+	ft_free_var(stack_input,stack_tmp);
+	
+
 	return (0);
 }

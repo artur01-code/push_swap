@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raddix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:31:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/23 13:47:34 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/24 11:41:31 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ int	ft_count_elements(t_list *stack_a)
 
 static int ft_calc_max_bits(t_list *stack_a)
 {
-	t_list	*tmp;
 	int	max_num;
 	int	max_bits;
 
-	tmp = stack_a;
 	max_num = ft_count_elements(stack_a);
 	max_bits = 0;
 	while ((max_num >> max_bits) != 0)

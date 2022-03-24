@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:48:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/23 10:50:08 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/24 11:40:20 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,7 @@ The first element becomes the last one.
 void	ft_rotate_up(t_list **stack_input) // 1 2 3 4 5 -3 -55 0 -5 99 420
 {
 	t_list	*tmp;
-	t_list	*current;
 	
-	current = *stack_input;
 	tmp = ft_lstlast(*stack_input);
 	tmp->next = *stack_input;			//das letzte zeigt auf das erste
 	*stack_input = (*stack_input)->next; //zeiger zeigt auf das zweite
