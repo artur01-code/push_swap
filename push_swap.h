@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/25 12:45:59 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 14:21:28 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
 
 typedef struct s_list{
 	int				content;
@@ -62,6 +61,5 @@ int		check_order(t_list **stack_a, t_list **stack_b);
 void	ft_free_var(t_list **stack_input, t_list **stack_tmp);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
-
 
 #endif
