@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:23:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/24 13:23:22 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 12:45:59 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-# include <unistd.h> //RM
-# include <stdio.h>
+# include <unistd.h>
+
 
 typedef struct s_list{
 	int				content;
@@ -34,7 +34,7 @@ char	**ft_freemem(char **new, size_t count);
 char	**ft_fillwords(char **new, const char *str, char c, size_t count);
 char	**ft_split(const char *str, char c);
 int		ft_atoi(const char *str);
-void	handle_input(t_list *stack_input, int argc, char **argv);
+void	handle_input(t_list **stack_input, int argc, char **argv);
 void	fill_stack_input(t_list **stack_input, int value);
 void	split_and_fill_stack_input(t_list **stack_input, char *tmp);
 int		check_dup(t_list **stack_input, int value);
@@ -58,8 +58,10 @@ int		ft_count_elements(t_list *stack_a);
 int		indexing(t_list **stack_a);
 int		ft_highest_index(t_list *stack_a);
 void	ft_raddixsort(t_list **stack_a, t_list **stack_b);
-void	ft_print_stack(t_list *stack_input, t_list *stack_tmp); //RM
-int		check_order(t_list *stack_a);
+int		check_order(t_list **stack_a, t_list **stack_b);
+void	ft_free_var(t_list **stack_input, t_list **stack_tmp);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 
 #endif

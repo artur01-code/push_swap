@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:11:20 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/24 12:11:00 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 11:49:44 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

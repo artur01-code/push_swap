@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 12:45:07 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/25 10:48:58 by jtomala          ###   ########.fr       */
+/*   Created: 2022/03/25 12:19:58 by jtomala           #+#    #+#             */
+/*   Updated: 2022/03/25 12:20:31 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-int	check_dup(t_list **stack_input, int value)
+void	ft_bzero(void *s, size_t n)
 {
-	t_list	*curr;
+	size_t			i;
+	unsigned char	*p;
 
-	curr = *stack_input;
-	while (curr->next != NULL)
+	p = (unsigned char *) s;
+	i = 0;
+	while (i < n)
 	{
-		if (curr->content == value)
-			return (1);
-		else
-			curr = curr->next;
+		*p = '\0';
+		p++;
+		i++;
 	}
-	return (0);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*p;
+
+	p = malloc(nmemb * size);
+	if (p == 0)
+		return (p);
+	ft_bzero(p, nmemb * size);
+	return (p);
 }

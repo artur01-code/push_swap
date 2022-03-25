@@ -6,26 +6,26 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/25 09:20:57 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 12:46:22 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	handle_input(t_list *stack_input, int argc, char **argv)
+void	handle_input(t_list **stack_input, int argc, char **argv)
 {
 	int	i;
 
 	i = 2;
 	if (argc > 2)
 	{
-		(stack_input)->content = ft_atoi(argv[1]);
-		(stack_input)->next = NULL;
+		(*stack_input)->content = ft_atoi(argv[1]);
+		(*stack_input)->next = NULL;
 		while (argv[i])
-			fill_stack_input(&stack_input, ft_atoi(argv[i++]));
+			fill_stack_input(stack_input, ft_atoi(argv[i++]));
 	}
 	else
-		split_and_fill_stack_input(&stack_input, argv[1]);
+		split_and_fill_stack_input(stack_input, argv[1]);
 }
 
 void	fill_stack_input(t_list **stack_input, int value)
@@ -34,7 +34,7 @@ void	fill_stack_input(t_list **stack_input, int value)
 
 	if (check_dup(stack_input, value))
 	{
-		printf("Error:\nDuplicate located.\n");
+		write(1, "Error\n", 6);
 		exit(1);
 	}
 	tmp = ft_lstnew(value);

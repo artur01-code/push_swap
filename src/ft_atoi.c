@@ -6,17 +6,16 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:44:55 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/25 09:20:47 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 10:46:11 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "../push_swap.h"
 
 static void	error_exit(void)
 {
-	printf("Error\n");
-	exit(1);
+	write(1, "Error\n", 6);
+	exit(0);
 }
 
 static int	check_calc_value(long res, int c, const char *str)

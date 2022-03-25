@@ -12,7 +12,8 @@ SRCS =	main.c \
 		src/rotate.c \
 		src/rotate_reverse.c \
 		own_sort.c \
-		raddix.c
+		raddix.c \
+		ft_calloc.c
 
 
 OBJS = $(SRCS:.c=.o)
