@@ -13,10 +13,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void	not_an_int(void)
+static void	error_exit(void)
 {
-	printf("Error:\nInput is not an Interger.\n");
+	printf("Error\n");
 	exit(1);
+}
+
+static int check_calc_value(long res, int c, const char *str)
+{
+	res = (res * 10) + (str[c] - '0');
+	if (res > 2147483647)
+		error_exit();
+	return ((int) res);
+
 }
 
 int	ft_atoi(const char *str)
@@ -40,9 +49,9 @@ int	ft_atoi(const char *str)
 	while (str[c])
 	{
 		if (str[c] >= '0' && str[c] <= '9')
-			res = (res * 10) + (str[c] - '0');
+			res = check_calc_value(res, c, str);
 		else
-			not_an_int();
+			error_exit();
 		c++;
 	}
 	return (res * s);

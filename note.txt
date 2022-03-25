@@ -25,6 +25,8 @@ change printf to your own!!!
 	changed to write, but make sure it is
 
 
-if the nbr is bigger the MAXINT print Error and exit
+//if the nbr is bigger the MAXINT print Error and exit
+	//done: 2147483648 gets to *-1 but more then this is working
 
-if the stack is still sorted print new line
+
+//if the stack is still sorted print new line
