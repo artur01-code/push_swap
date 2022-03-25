@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_input.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 11:54:22 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/24 12:03:20 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 09:20:57 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	fill_stack_input(t_list **stack_input, int value)
 {
 	t_list	*tmp;
 
-	if(check_dup(stack_input, value))
+	if (check_dup(stack_input, value))
 	{
 		printf("Error:\nDuplicate located.\n");
 		exit(1);

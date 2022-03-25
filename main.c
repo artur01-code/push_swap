@@ -3,78 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:55:41 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/24 14:33:04 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 09:16:27 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-static void print_bin(unsigned int nbr)
+static void	swap_or_rotate(t_list *stack_a)
 {
-	if (nbr > 1)
-		print_bin (nbr >> 1);
-	printf("%d", nbr & 1);	
-}*/
-
-void ft_print_stack(t_list *stack_input, t_list *stack_tmp)
-{
-	t_list *tmp1;
-	t_list *tmp2;
-
-	tmp1 = stack_input;
-	tmp2 = stack_tmp;
-	if (tmp1)
-	{
-		while (tmp1->next != NULL)
-		{
-			printf("stack_A(%d): %d\n", tmp1->index, tmp1->content);
-			tmp1 = tmp1->next;
-		}
-
-		printf("stack_A(%d): %d\n", tmp1->index, tmp1->content);
-	}
-	printf("########################################\n");
-	if (tmp2)
-	{
-		while (tmp2->next != NULL)
-		{
-			printf("stack_B(%d): %d\n", tmp2->index, tmp2->content);
-			tmp2 = tmp2->next;
-		}
-		printf("stack_B(%d): %d\n", tmp2->index, tmp2->content);
-	}
+	if (stack_a->content > stack_a->next->content)
+		sa(&stack_a);
+	else
+		rra(&stack_a);
 }
 
-/*
-static void do_tests(t_list *stack_input, t_list *stack_tmp)
+void	small_sort(t_list *stack_a)
 {
-	printf("----------------------------------------\n");
-	printf("---------------START PRINTING-----------\n");
-	printf("----------------------------------------\n");
-	printf("------------------BEFORE----------------\n");
-	ft_print_stack(stack_input, stack_tmp);
-	printf("------------------AFTER----------------\n");
-	//ft_swap(&stack_input);
-	//ft_swap(&stack_input);
-	ft_push(&stack_tmp, &stack_input);
-	//ft_rotate_up(&stack_input);
-	//ft_rotate_down(&stack_input);
-	ft_print_stack(stack_input, stack_tmp);
-	printf("------------------SECOND----------------\n");
-	//ft_rotate_up(&stack_input);
-	//ft_rotate_down(&stack_input);
-	ft_push(&stack_tmp, &stack_input);
-	ft_print_stack(stack_input, stack_tmp);
-}*/
-
-void small_sort(t_list *stack_a)
-{
-	t_list *content;
-	int	big;
+	t_list	*content;
+	int		big;
 
 	content = ft_highest(stack_a);
 	big = content->content;
@@ -93,16 +42,11 @@ void small_sort(t_list *stack_a)
 				sa(&stack_a);
 		}
 		else
-		{
-			if (stack_a->content > stack_a->next->content)
-				sa(&stack_a);
-			else
-				rra(&stack_a);
-		}
+			swap_or_rotate(stack_a);
 	}
 }
 
-void ft_free_var(t_list *stack_input, t_list *stack_tmp)
+void	ft_free_var(t_list *stack_input, t_list *stack_tmp)
 {
 	while (stack_input->next != NULL)
 	{
@@ -113,11 +57,11 @@ void ft_free_var(t_list *stack_input, t_list *stack_tmp)
 	free(stack_tmp);
 }
 
-int check_order(t_list *stack_a)
+int	check_order(t_list *stack_a)
 {
-	t_list *tmp;
-	int check_amount;
-	
+	t_list	*tmp;
+	int		check_amount;
+
 	tmp = stack_a;
 	check_amount = 1;
 	while (tmp->next != NULL)
@@ -135,9 +79,9 @@ int check_order(t_list *stack_a)
 
 int	main(int argc, char **argv)
 {
-	t_list *stack_input;
-	t_list *stack_tmp;
-	int amount_of_elements;
+	t_list	*stack_input;
+	t_list	*stack_tmp;
+	int		amount_of_elements;
 
 	stack_input = malloc(sizeof(t_list));
 	stack_tmp = malloc(sizeof(t_list));
@@ -150,15 +94,10 @@ int	main(int argc, char **argv)
 	amount_of_elements = indexing(&stack_input);
 	stack_tmp->index = -1;
 	check_order(stack_input);
-	//do_tests(stack_input, stack_tmp);
-	//ft_print_stack(stack_input, stack_tmp);
-	if (amount_of_elements <= 5)
+	if (amount_of_elements <= 9)
 		small_sort(stack_input);
 	else
 		ft_raddixsort(&stack_input, &stack_tmp);
-	//ft_print_stack(stack_input, stack_tmp);
-	ft_free_var(stack_input,stack_tmp);
-	
-
+	ft_free_var(stack_input, stack_tmp);
 	return (0);
 }

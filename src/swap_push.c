@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:19:34 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/23 13:34:45 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 09:21:32 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements.
 */
-void sa(t_list **stack_a)
+void	sa(t_list **stack_a)
 {
 	ft_swap(stack_a);
 	write(1, "sa\n", 3);

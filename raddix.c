@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raddix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtomala <jtomala@students.42wolfsburg.de>  +#+  +:+       +#+        */
+/*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:31:40 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/24 11:41:31 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 09:18:36 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_count_elements(t_list *stack_a)
 	return (counter);
 }
 
-static int ft_calc_max_bits(t_list *stack_a)
+static int	ft_calc_max_bits(t_list *stack_a)
 {
 	int	max_num;
 	int	max_bits;
@@ -41,15 +41,13 @@ static int ft_calc_max_bits(t_list *stack_a)
 
 void	ft_raddixsort(t_list **stack_a, t_list **stack_b)
 {
-	int i;
-	int j;
-	int max_bits;
-	int elements_size;
+	int	i;
+	int	j;
+	int	max_bits;
+	int	elements_size;
 
 	max_bits = ft_calc_max_bits(*stack_a);
 	elements_size = ft_count_elements(*stack_a);
-	//printf("ELEMENTS: %d\n", elements_size);
-
 	i = 0;
 	j = 0;
 	while (i < max_bits)

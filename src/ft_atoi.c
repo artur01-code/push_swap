@@ -6,7 +6,7 @@
 /*   By: jtomala <jtomala@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:44:55 by jtomala           #+#    #+#             */
-/*   Updated: 2022/03/18 15:01:21 by jtomala          ###   ########.fr       */
+/*   Updated: 2022/03/25 09:20:47 by jtomala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ static void	error_exit(void)
 	exit(1);
 }
 
-static int check_calc_value(long res, int c, const char *str)
+static int	check_calc_value(long res, int c, const char *str)
 {
 	res = (res * 10) + (str[c] - '0');
 	if (res > 2147483647)
 		error_exit();
 	return ((int) res);
-
 }
 
 int	ft_atoi(const char *str)
